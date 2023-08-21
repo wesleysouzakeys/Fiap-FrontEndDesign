@@ -1,0 +1,88 @@
+:root {
+    --main--radius: 5px;
+    --main-padding: 5px;
+}
+
+body {
+    max-width: 960px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.container {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.2fr 1.5fr 1.5fr 0.5fr;
+    gap: 0.2rem;
+    grid-template-areas: 
+                        "nav nav nav nav"
+                        "aside main main main"
+                        "aside c1 c2 c3"
+                        "footer footer footer footer";
+}
+
+nav {
+    background-color: aqua;
+    grid-area: nav;
+    border-radius: var(--main--radius);
+    padding-top: var(--main-padding);
+}
+
+main {
+    background-color: rgb(0, 217, 255);
+    grid-area: main;
+    border-radius: var(--main--radius);
+    padding-top: var(--main-padding);
+}
+
+aside {
+    background-color: rgb(0, 174, 255);
+    grid-area: aside;
+    border-radius: var(--main--radius);
+    padding-top: var(--main-padding);
+}
+
+#content1 {
+    background-color: rgb(0, 68, 255);
+    grid-area: c1;
+    border-radius: var(--main--radius);
+    padding-top: var(--main-padding);
+}
+
+#content2 {
+    background-color: rgb(0, 89, 255);
+    grid-area: c2;
+    border-radius: var(--main--radius);
+    padding-top: var(--main-padding);
+}
+
+#content3 {
+    background-color: rgb(0, 132, 255);
+    grid-area: c3;
+    border-radius: var(--main--radius);
+    padding-top: var(--main-padding);
+}
+
+footer {
+    background-color: rgb(0, 89, 255);
+    grid-area: footer;
+    border-radius: var(--main--radius);
+    padding-top: var(--main-padding);
+
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px;
+}
+
+.menu-items {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+}
