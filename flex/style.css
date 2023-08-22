@@ -1,0 +1,69 @@
+:root {
+  --main-radius: 5px;
+  --main-padding: 5px;
+  --gap: 0.2rem;
+}
+
+body {
+  margin: 0;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1em;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #fff;
+  text-align: center;
+  background-color: bisque;
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.menu,
+aside,
+main,
+article,
+footer {
+  margin: var(--gap);
+  border-radius: var(--main-radius);
+  padding: var(--main-padding);
+  background-color: #535353;
+}
+
+.main-container {
+  display: flex;
+  flex: 1;
+}
+
+aside {
+  flex-basis: 25%;
+}
+
+.content-container {
+  display: flex;
+  flex: 3;
+  flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+
+.content-row {
+    display: flex;
+    flex: 1;
+}
+
+article {
+    flex: 0.2;
+}
+
+footer {
+    flex-basis: 10%;
+}
