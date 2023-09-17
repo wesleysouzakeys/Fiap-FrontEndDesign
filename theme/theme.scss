@@ -1,0 +1,68 @@
+@use '@angular/material' as mat;
+@import './palettes.scss';
+
+// Defina as cores primária e secundária
+$primary: mat.define-palette(mat.$deep-purple-palette); // Mantive por enquanto a original do deep-purple
+$accent: mat.define-palette($paletteAccentLoginApp, 500, A200, A100, A400);
+
+// Crie o tema personalizado usando as cores definidas
+$theme-light: mat.define-light-theme((
+  color: (
+    primary: $primary,
+    accent: $accent
+  )
+));
+
+// Aplique o tema ao Angular Material
+@include mat.all-component-themes($theme-light);
+
+// Ajustes diretamente nas classes conforme o componente
+button.mdc-button.mat-accent {
+    color: mat.get-color-from-palette($accent, '500-contrast');
+}
+mat-card.card-hover{
+    &::before{
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        position: absolute;
+        content: "";
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    &:hover::before{
+        background: black;
+        opacity: 0.04;
+    }
+}
+
+
+$my-primary-dark: mat.define-palette($dark, 500);
+$my-accent-dark: mat.define-palette($dark, A200, A100, A400);
+
+$my-theme-dark: mat.define-dark-theme((
+ color: (
+   primary: $my-primary-dark,
+   accent: $my-accent-dark
+ )
+));
+
+.dark-theme {
+  @include mat.all-component-colors($my-theme-dark);
+  @include mat.button-color($theme-light);
+
+  h1, h2, h3, h4, h5, h6, span{
+    color: #fff;
+  }
+  button .mdc-button__label span{
+    color: initial;
+  }
+  mat-card.card-hover{
+    &:hover::before{
+        background: white;
+        opacity: 0.08;
+    }
+  }
+}
